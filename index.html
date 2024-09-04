@@ -20,11 +20,11 @@
       <div class="search-container">
         <div class="search-component">
           <img class="search-icon" src="assets/search.svg" alt="Search Icon" />
-          <input class="search-input" type="text" id="note-title" placeholder="Search notes..." />
+          <input class="search-input" type="text" id="search-input" placeholder="Search notes..." />
         </div>
       </div>
       <div class="notes-container">
-        <div class="empty-notes">
+        <div id="empty-notes" class="empty-notes">
           <div class="circle">
             <img class="info-icon" src="assets/info.svg" alt="Info Icon" />
           </div>
@@ -36,14 +36,36 @@
           </div>
           <button class="empty-note-button">
             <img class="note-add-icon" src="assets/note_add.svg" alt="Note Add Icon" />
-            <label> Add Note</label>
+            <label id="add-note-button"> Add Note</label>
           </button>
         </div>
       </div>
-
+      <div class="new-note-container">
+        <div class="new-note-title">
+          <p class="new-note-title-add">Add new note</p>
+          <button class="cancel-button">Cancel</button>
+        </div>
+        <input class="title-input" type="text" id="input-note-title" placeholder="Untitled Note" />
+        <div class="textarea-wrapper">
+          <textarea class="body-input" type="text" id="input-note-body" placeholder="Your note..."></textarea>
+          <button id="save-note-button" class="save-note-button">Add</button>
+        </div>
+      </div>
+      <div class="notes-list-container">
+      </div>
     </div>
   </main>
   <script src="App.js"></script>
+  <div id="delete-popup" class="popup">
+    <div class="popup-content">
+      <p class="popup-header">Delete Note</p>
+      <p class="popup-secondary-text">Are you sure you want to delete this note?</p>
+      <div class="popup-buttons">
+        <button id="cancel-delete" class="popup-button">Cancel</button>
+        <button id="confirm-delete" class="popup-button">Delete</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Note App</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+</head>
+
+<body>
+  <main>
+    <div class="app">
+      <div class="app-header">
+        <img class="note-icon" src="assets/note.svg" alt="Note Icon" />
+        <div class="title">Notes</div>
+      </div>
+      <div class="search-container">
+        <div class="search-component">
+          <img class="search-icon" src="assets/search.svg" alt="Search Icon" />
+          <input class="search-input" type="text" id="note-title" placeholder="Search notes..." />
+        </div>
+      </div>
+      <div class="notes-container">
+        <div class="empty-notes">
+          <div class="circle">
+            <img class="info-icon" src="assets/info.svg" alt="Info Icon" />
+          </div>
+          <div class="empty-note-text-container">
+            <p class="empty-note-headline">No notes yet</p>
+            <p class="empty-note-info">
+              Add a note to keep track of your learnings.
+            </p>
+          </div>
+          <button class="empty-note-button">
+            <img class="note-add-icon" src="assets/note_add.svg" alt="Note Add Icon" />
+            <label> Add Note</label>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="App.js"></script>
+</body>
+
+</html>

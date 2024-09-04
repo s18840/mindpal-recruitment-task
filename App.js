@@ -9,25 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const emptyNotesDiv = document.getElementById("empty-notes");
   const newNoteContainer = document.querySelector(".new-note-container");
+  newNoteContainer.style.display = "none";
+
   const notesListContainer = document.querySelector(".notes-list-container");
   const notesContainer = document.querySelector(".notes-container");
   notesContainer.style.display = "none";
-  newNoteContainer.style.display = "none";
-  const cancelButton = document.querySelector(".cancel-button");
 
+  const cancelButton = document.querySelector(".cancel-button");
   const saveNoteButton = document.querySelector(".save-note-button");
   saveNoteButton.style.display = "none";
 
   const inputNoteTitle = document.getElementById("input-note-title");
   const inputNoteBody = document.getElementById("input-note-body");
-
   const deletePopup = document.getElementById("delete-popup");
   const confirmDeleteButton = document.getElementById("confirm-delete");
   const cancelDeleteButton = document.getElementById("cancel-delete");
-
-  let noteIndexToDelete = null;
-
+  const searchComponent = document.querySelector(".search-component");
   const searchInput = document.getElementById("search-input");
+  let noteIndexToDelete = null;
 
   function formatDate(date) {
     const options = { month: "long", day: "numeric" };
@@ -96,14 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-
-
-  searchInput.addEventListener("input", function () {
-    const query = searchInput.value;
-    const filteredNotes = searchNotes(query);
-    displayNotes(filteredNotes);
-  });
 
   function updateNotesList() {
     notesListContainer.innerHTML = "";
@@ -203,26 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
     saveNoteButton.style.display = "block";
   });
 
-  inputNoteTitle.addEventListener("input", function () {
-    if (inputNoteTitle.value.trim() !== "") {
-      inputNoteTitle.style.backgroundColor = "#fff";
-      inputNoteTitle.style.border = "1px solid #1b1c1e";
-    } else {
-      inputNoteTitle.style.backgroundColor = "#eeeff0";
-      inputNoteTitle.style.border = "none";
-    }
-  });
-
-  inputNoteBody.addEventListener("input", function () {
-    if (inputNoteBody.value.trim() !== "") {
-      inputNoteBody.style.backgroundColor = "#fff";
-      inputNoteBody.style.border = "1px solid #1b1c1e";
-    } else {
-      inputNoteBody.style.backgroundColor = "#eeeff0";
-      inputNoteBody.style.border = "none";
-    }
-  });
-
   saveNoteButton.addEventListener("click", function () {
     const title = inputNoteTitle.value;
     const body = inputNoteBody.value;
@@ -236,10 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       inputNoteTitle.value = "";
       inputNoteBody.value = "";
-      inputNoteTitle.style.backgroundColor = "#eeeff0";
-      inputNoteBody.style.backgroundColor = "#eeeff0";
-      inputNoteTitle.style.border = "none";
-      inputNoteBody.style.border = "none";
 
       newNoteContainer.style.display = "none";
       emptyNotesDiv.style.display = notes.length === 0 ? "flex" : "none";
@@ -248,9 +215,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  if (notes.length > 0) {
-    notesContainer.style.display = "none";
-  }
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value;
+    const filteredNotes = searchNotes(query);
+    displayNotes(filteredNotes);
+  });
+
+  searchComponent.addEventListener("click", function () {
+    searchInput.focus();
+  });
 
   cancelDeleteButton.addEventListener("click", function () {
     deletePopup.style.display = "none";
@@ -267,4 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  if (notes.length > 0) {
+    notesContainer.style.display = "none";
+  }
 });

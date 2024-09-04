@@ -8,13 +8,21 @@ body {
 }
 
 .app-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 16px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    z-index: 1000;
+    gap: 8px;
+    padding: 4px 16px;
 }
 .note-icon {
   padding: 4px;
+}
+
+.title-container {
+    display: flex;
 }
 
 .title {
@@ -27,7 +35,6 @@ body {
 
 .search-container {
   display: flex;
-  padding: 0 16px;
 }
 
 .search-component {
@@ -45,32 +52,40 @@ body {
   font-weight: 400;
   line-height: 25.6px;
   text-align: left;
-  color: #1B1C1E;
-  background-color: #eeeff0;
+  color: #1b1c1e;
+  background-color: inherit;
   border: 0;
   width: 100%;
 }
 
-.search-input:hover {
-  background-color: #DCDEE0;
+.search-component:hover {
+  background-color: #dcdee0;
+}
+
+.search-component:hover .search-input {
+  background-color: inherit;
+}
+
+.search-component:focus-within,
+.search-component:active {
+  background-color: #ffffff;
+  border: 1px solid #1b1c1e;
+}
+
+.search-component:focus-within .search-input,
+.search-component:active .search-input {
+  background-color: #ffffff;
+}
+
+.search-input:focus-visible {
   outline: none;
 }
 
 .search-input:active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  color: #1b1c1e;
   outline: none;
-  color: #1B1C1E;
 }
-.search-component:hover {
-    background-color: #DCDEE0;
-    outline: none;
-  }
-  
-  .search-component:active {
-    background-color: #FFFFFF;
-    border: 1px solid #1b1c1e;
-    outline: none;
-  }
 
 .notes-container {
   padding: 0px 16px;
@@ -132,12 +147,29 @@ body {
   border: 1px solid #bcbcbd;
 }
 
+.empty-note-button:hover {
+  background-color: #dcdee0;
+}
+
+.empty-note-button:focus-visible,
+.empty-note-button:focus-within {
+  background-color: #bdbdbd;
+  border: 1px solid #bdbdbd;
+  outline: none;
+}
+
+.empty-note-button:active {
+  background-color: #bdbdbd;
+  border: 1px solid #bdbdbd;
+  outline: none;
+}
+
 .new-note-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 20px 16px;
-  box-shadow: 0px 4px 16px 0px #00000012;
+  box-shadow: 0px 0px 16px 0px #00000014;
 }
 
 .new-note-title {
@@ -193,24 +225,33 @@ body {
   width: 100%;
 }
 
-.title-input:focus-visible,
-.body-input:focus-visible {
-  background-color: #fff;
-  border: 1px solid #1b1c1e;
-  outline: none;
-}
-
 .title-input:hover,
 .body-input:hover {
-  background-color: #DCDEE0;
+  background-color: #dcdee0;
+}
+
+.title-input:focus-visible,
+.body-input:focus-visible {
+  background-color: #ffffff;
+  border: 1px solid #1b1c1e;
   outline: none;
 }
 
 .title-input:active,
 .body-input:active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #1b1c1e;
   outline: none;
+}
+
+.title-input:focus-within,
+.body-input:focus-within {
+  background-color: #ffffff;
+}
+
+.title-input:focus-within:hover,
+.body-input:focus-within:hover {
+  background-color: #ffffff;
 }
 
 .textarea-wrapper {
@@ -272,8 +313,20 @@ body {
 .edit-button {
   background-color: unset;
   border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.remove-button:hover, .edit-button:hover {
+  background-color: #E7E7E7;
+  border-radius: 12px;
+}
+
+.remove-button:active, .edit-button:active {
+  background-color: #BDBDBD;
+  border-radius: 12px;
+}
 .notes-title-bold {
   color: #1b1c1e;
   font-size: 14px;

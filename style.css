@@ -383,6 +383,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 .popup-header {
@@ -412,7 +413,7 @@ body {
   padding: 24px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0px 8px 0px #0000001a;
 }
 
 .popup-buttons {
@@ -431,18 +432,44 @@ body {
   font-size: 16px;
 }
 
-#cancel-delete {
+.popup-button-cancel {
   border: 1px solid #bcbcbd;
   background-color: #fff;
   border-radius: 12px;
   padding: 8px 16px;
 }
 
-#confirm-delete {
+.popup-button-cancel:hover {
+  background-color: #dcdee0;
+}
+
+.popup-button-cancel:focus-visible,
+.popup-button-cancel:focus-within {
+  background-color: #bdbdbd;
+  border: 1px solid #bdbdbd;
+  outline: none;
+}
+
+.popup-button-cancel:active {
+  background-color: #bdbdbd;
+  border: 1px solid #bdbdbd;
+  outline: none;
+}
+
+.popup-button-delete {
   background-color: #6b3c9b;
   color: white;
   border-radius: 12px;
   padding: 8px 16px;
+  border: 0;
+}
+
+.popup-button-delete:hover {
+  background-color: #844dba;
+}
+
+.popup-button-delete:active {
+  background-color: #5b2f87;
 }
 
 .confirm-delete:hover {

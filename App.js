@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchComponent = document.querySelector(".search-component");
   const searchInput = document.getElementById("search-input");
   let noteIndexToDelete = null;
+  let editNoteIndex = null;
 
   function formatDate(date) {
     const options = { month: "long", day: "numeric" };
@@ -157,8 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     emptyNotesDiv.style.display = "none";
     addNoteAboveButton.style.display = "none";
 
-    notes.splice(index, 1);
-    updateNotesList();
+    editNoteIndex = index;
   }
 
   function removeNoteWithConfirmation(index) {
@@ -184,6 +184,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (notes.length > 0) {
       addNoteAboveButton.style.display = "block";
     }
+
+    inputNoteTitle.value = "";
+    inputNoteBody.value = "";
+    editNoteIndex = null;
   });
 
   inputNoteBody.addEventListener("focus", function () {
@@ -203,7 +207,13 @@ document.addEventListener("DOMContentLoaded", function () {
         title: title || "Untitled Note",
         body: body,
       };
-      notes.push(note);
+
+      if (editNoteIndex !== null) {
+        notes[editNoteIndex] = note;
+        editNoteIndex = null;
+      } else {
+        notes.push(note);
+      }
 
       inputNoteTitle.value = "";
       inputNoteBody.value = "";

@@ -1,5 +1,18 @@
 body {
   font-family: "Inter", sans-serif;
+  --primary-button: #6b3c9b;
+  --primary-button-hover: #844dba;
+  --primary-button-active: #5b2f87;
+  --secondary-button: #fff;
+  --secondary-button-hover: #e7e7e7;
+  --secondary-button-active: #bdbdbd;
+  --white: #fff;
+  --black: #1b1c1e;
+  --light-gray: #eeeff0;
+  --gray: #dcdee0;
+  --dark-gray: #bcbcbd;
+  --blue: #0f75b8;
+
 }
 .app {
   display: flex;
@@ -12,7 +25,7 @@ body {
   top: 0;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: var(--white);
   z-index: 1000;
   gap: 8px;
   padding: 4px 16px;
@@ -30,7 +43,7 @@ body {
   font-weight: 700;
   line-height: 30px;
   text-align: left;
-  color: #1b1c1e;
+  color: var(--black);
 }
 
 .search-container {
@@ -42,7 +55,7 @@ body {
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  background-color: #eeeff0;
+  background-color: var(--light-gray);
   border-radius: 12px;
   width: 100%;
 }
@@ -52,14 +65,14 @@ body {
   font-weight: 400;
   line-height: 25.6px;
   text-align: left;
-  color: #1b1c1e;
+  color: var(--black);
   background-color: inherit;
   border: 0;
   width: 100%;
 }
 
 .search-component:hover {
-  background-color: #dcdee0;
+  background-color: var(--gray);
 }
 
 .search-component:hover .search-input {
@@ -68,13 +81,13 @@ body {
 
 .search-component:focus-within,
 .search-component:active {
-  background-color: #ffffff;
-  border: 1px solid #1b1c1e;
+  background-color: var(--white);
+  border: 1px solid var(--black);
 }
 
 .search-component:focus-within .search-input,
 .search-component:active .search-input {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .search-input:focus-visible {
@@ -82,8 +95,8 @@ body {
 }
 
 .search-input:active {
-  background-color: #ffffff;
-  color: #1b1c1e;
+  background-color: var(--white);
+  color: var(--black);
   outline: none;
 }
 
@@ -108,8 +121,8 @@ body {
   width: 52.21px;
   height: 52.21px;
   border-radius: 90px;
-  border: 1.78px solid #eeeff0;
-  background-color: #1b1c1e;
+  border: 1.78px solid var(--light-gray);
+  background-color: var(--black);
 }
 
 .empty-note-text-container {
@@ -123,7 +136,7 @@ body {
   font-weight: 500;
   line-height: 30px;
   text-align: center;
-  color: #1b1c1e;
+  color: var(--black);
   margin: 0;
 }
 
@@ -142,25 +155,25 @@ body {
   align-items: center;
   padding: 8px 16px;
   gap: 8px;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 12px;
-  border: 1px solid #bcbcbd;
+  border: 1px solid var(--dark-gray);
 }
 
 .empty-note-button:hover {
-  background-color: #dcdee0;
+  background-color: var(--gray);
 }
 
 .empty-note-button:focus-visible,
 .empty-note-button:focus-within {
-  background-color: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  background-color: var(--secondary-button-active);
+  border: 1px solid var(--secondary-button-active);
   outline: none;
 }
 
 .empty-note-button:active {
-  background-color: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  background-color: var(--secondary-button-active);
+  border: 1px solid var(--secondary-button-active);
   outline: none;
 }
 
@@ -191,7 +204,7 @@ body {
   font-weight: 400;
   line-height: 23.8px;
   text-align: left;
-  color: #0f75b8;
+  color: var(--blue);
   background-color: unset;
   border: 0;
 }
@@ -200,7 +213,7 @@ body {
   font-weight: 500;
   line-height: 23.8px;
   text-align: left;
-  color: #0f75b8;
+  color: var(--blue);
   background-color: unset;
   border: 0;
   border-bottom: 1px solid;
@@ -213,7 +226,7 @@ body {
   font-weight: 400;
   line-height: 25.6px;
   text-align: left;
-  background-color: #eeeff0;
+  background-color: var(--light-gray);
   border-radius: 12px;
   border: 0;
   padding: 8px 12px;
@@ -227,31 +240,31 @@ body {
 
 .title-input:hover,
 .body-input:hover {
-  background-color: #dcdee0;
+  background-color: var(--gray);
 }
 
 .title-input:focus-visible,
 .body-input:focus-visible {
-  background-color: #ffffff;
-  border: 1px solid #1b1c1e;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   outline: none;
 }
 
 .title-input:active,
 .body-input:active {
-  background-color: #ffffff;
-  border: 1px solid #1b1c1e;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   outline: none;
 }
 
 .title-input:focus-within,
 .body-input:focus-within {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .title-input:focus-within:hover,
 .body-input:focus-within:hover {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .textarea-wrapper {
@@ -264,8 +277,8 @@ body {
   bottom: 10px;
   right: 10px;
   padding: 8px 16px;
-  background-color: #6b3c9b;
-  color: white;
+  background-color: var(--primary-button);
+  color: var(--white);
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -276,11 +289,11 @@ body {
 }
 
 .save-note-button:hover {
-  background-color: #844dba;
+  background-color: var(--primary-button-hover);
 }
 
 .save-note-button:active {
-  background-color: #5b2f87;
+  background-color: var(--primary-button-active);
 }
 
 .notes-list-container {
@@ -320,17 +333,17 @@ body {
 
 .remove-button:hover,
 .edit-button:hover {
-  background-color: #e7e7e7;
+  background-color: var(--secondary-button-hover);
   border-radius: 12px;
 }
 
 .remove-button:active,
 .edit-button:active {
-  background-color: #bdbdbd;
+  background-color: var(--secondary-button-active);
   border-radius: 12px;
 }
 .notes-title-bold {
-  color: #1b1c1e;
+  color: var(--black);
   font-size: 14px;
   font-weight: 700;
   line-height: 23.8px;
@@ -358,19 +371,19 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8px 16px;
-  background-color: #6b3c9b;
-  color: #fff;
+  background-color: var(--primary-button);
+  color: var(--white);
   border: 0;
   border-radius: 12px;
   width: 100%;
 }
 
 .add-note-above-button:hover {
-  background-color: #844dba;
+  background-color: var(--primary-button-hover);
 }
 
 .add-note-above-button:active {
-  background-color: #5b2f87;
+  background-color: var(--primary-button-active);
 }
 
 .popup {
@@ -392,7 +405,7 @@ body {
   font-weight: 500;
   line-height: 30px;
   text-align: left;
-  color: #1b1c1e;
+  color: var(--black);
 }
 
 .popup-secondary-text {
@@ -401,7 +414,7 @@ body {
   font-weight: 400;
   line-height: 25.6px;
   text-align: left;
-  color: #1b1c1e;
+  color: var(--black);
 }
 
 .popup-content {
@@ -409,7 +422,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 24px;
   border-radius: 16px;
   text-align: center;
@@ -433,49 +446,49 @@ body {
 }
 
 .popup-button-cancel {
-  border: 1px solid #bcbcbd;
-  background-color: #fff;
+  border: 1px solid var(--dark-gray);
+  background-color: var(--white);
   border-radius: 12px;
   padding: 8px 16px;
 }
 
 .popup-button-cancel:hover {
-  background-color: #dcdee0;
+  background-color: var(--gray);
 }
 
 .popup-button-cancel:focus-visible,
 .popup-button-cancel:focus-within {
-  background-color: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  background-color: var(--secondary-button-active);
+  border: 1px solid var(--secondary-button-active);
   outline: none;
 }
 
 .popup-button-cancel:active {
-  background-color: #bdbdbd;
-  border: 1px solid #bdbdbd;
+  background-color: var(--secondary-button-active);
+  border: 1px solid var(--secondary-button-active);
   outline: none;
 }
 
 .popup-button-delete {
-  background-color: #6b3c9b;
-  color: white;
+  background-color: var(--primary-button);
+  color: var(--white);
   border-radius: 12px;
   padding: 8px 16px;
   border: 0;
 }
 
 .popup-button-delete:hover {
-  background-color: #844dba;
+  background-color: var(--primary-button-hover);
 }
 
 .popup-button-delete:active {
-  background-color: #5b2f87;
+  background-color: var(--primary-button-active);
 }
 
 .confirm-delete:hover {
-  background-color: #844dba;
+  background-color: var(--primary-button-hover);
 }
 
 .confirm-delete:active {
-  background-color: #5b2f87;
+  background-color: var(--primary-button-active);
 }
